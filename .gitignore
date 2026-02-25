@@ -4,7 +4,6 @@ sleep-edf-database-expanded-1.0.0/
 *.npz
 
 # Models and Caches
-*.pth
 *.pt
 __pycache__/
 .DS_Store
