@@ -6,7 +6,7 @@ Automatic sleep-stage classification using multi-channel EEG/EOG with a Convolut
 ## Dataset Availability 💾
 Due to GitHub's file size limits, the processed `.npz` files and the raw Sleep-EDF dataset are hosted externally on Google Drive. 
 
-👉 **[Click here to download the datasets]([[https://drive.google.com/drive/folders/1Nyg_bC2_i0LOA_sShilYWmRwH8h870Mb?usp=share_link](https://drive.google.com/drive/folders/19dJG4BRJRO24tp8b33eLNJF4e8-DIG_8?usp=share_link)](https://drive.google.com/drive/folders/19dJG4BRJRO24tp8b33eLNJF4e8-DIG_8?usp=share_link))**
+👉 **[Click here to download the datasets]([https://drive.google.com/drive/folders/1Nyg_bC2_i0LOA_sShilYWmRwH8h870Mb?usp=share_link])**
 
 Please download the files and place them in the root directory of this project before running the notebooks. The downloaded folder includes:
 - `train_smote_final.npz` — SMOTE-balanced training dataset (features + labels).
