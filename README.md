@@ -1,31 +1,42 @@
-# Sleep Stage Classification (CRNN: CNN + Bi-GRU)
+# Sleep Stage Classification with CNN + Bi-GRU
 
-## Overview
-Automatic sleep-stage classification using multi-channel EEG/EOG with a Convolutional + Bidirectional GRU (CRNN) pipeline. The repository contains processed datasets, training/evaluation notebooks, and trained model weights for reproducible experiments.
+An academic deep-learning project exploring sleep-stage classification from multi-channel EEG/EOG signals using a convolutional and recurrent architecture.
 
-## Dataset Availability 💾
-Due to GitHub's file size limits, the processed `.npz` files and the raw Sleep-EDF dataset are hosted externally on Google Drive. 
+## Technical focus
+- Signal exploration and preprocessing.
+- A PyTorch CNN + bidirectional GRU sequence model.
+- Comparison of SMOTE and random oversampling (ROS) training variants.
+- Notebook-based training, evaluation, and visualization.
 
+## Repository guide
+| File | Purpose |
+| --- | --- |
+| `EDA.ipynb` | Exploratory analysis and visualizations |
+| `Sleep_Classification_Training.ipynb` | Training and evaluation workflow |
+| `Hospital_SleepNet.ipynb` | Additional experimental notebook |
+| `model_smote.pth` | Saved weights for a SMOTE training variant |
+| `model_ros.pth` | Saved weights for a ROS training variant |
+| `requirements.txt` | Python dependencies |
 
-👉 **[Click here to download the datasets](https://drive.google.com/drive/folders/19dJG4BRJRO24tp8b33eLNJF4e8-DIG_8?usp=share_link)**
-
-
-Please download the files and place them in the root directory of this project before running the notebooks. The downloaded folder includes:
-- `train_smote_final.npz` — SMOTE-balanced training dataset (features + labels).
-- `train_ros_final.npz` — ROS-balanced training dataset (features + labels).
-- `test_final.npz` — test dataset with real-world class distribution.
-- `sleep-edf-database-expanded-1.0.0/` — optional raw EDF files.
-
-## Repository contents
-- `EDA.ipynb` — exploratory data analysis and visualizations.
-- `Sleep_Classification_Training.ipynb` — preprocessing, training, evaluation pipeline (notebook).
-- `model_smote.pth` — trained model weights (SMOTE).
-- `model_ros.pth` — trained model weights (ROS).
-- `requirements.txt` — Python dependencies.
-
-## Quick start
-1. Create a Python 3.8+ environment and install dependencies:
+## Setup
+Create a Python virtual environment, then install the listed dependencies:
 ```bash
-
 pip install -r requirements.txt
+```
+Open the notebooks in a Jupyter-compatible environment. Review file paths, data shapes, and configuration before running cells. A fresh-environment execution and exact dependency pinning have not yet been documented.
 
+## Data
+The original project README provides an external dataset folder:
+[Project dataset folder](https://drive.google.com/drive/folders/19dJG4BRJRO24tp8b33eLNJF4e8-DIG_8?usp=share_link).
+
+Expected processed inputs include:
+- `train_smote_final.npz`
+- `train_ros_final.npz`
+- `test_final.npz`
+
+Raw Sleep-EDF files are optional depending on the notebook workflow. Access, contents, redistribution rights, and suitability of the external folder must be checked separately. Use only datasets you are authorized to access.
+
+## Evaluation and limitations
+The notebooks are the source of experimental results. This README does not claim a new benchmark or independently reproduced score. Before interpreting generalization, verify subject-level train/test separation, preprocessing boundaries, and that oversampling is confined to training data.
+
+This is an academic research project, not a clinical diagnostic system.
